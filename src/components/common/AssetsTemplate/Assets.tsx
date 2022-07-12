@@ -12,8 +12,10 @@ const Assets = () => {
         </div>
       </div>
       <div className="main">
-        <div className="each"></div>
-        <div className="each"></div>
+        <div className="each">
+          <div className="p">😁</div>
+        </div>
+        <div className="each">😁</div>
       </div>
     </AssetsStyle>
   );

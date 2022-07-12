@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const NavStyle = styled.div`
   position: fixed;
+  z-index: 999;
   bottom: 0;
   left: 0;
   width: 100%;

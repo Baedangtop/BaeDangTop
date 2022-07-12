@@ -9,9 +9,45 @@ const FooterStyle = styled.div`
 
   margin: 0 auto;
   position: relative;
+  .t {
+    position: relative;
+
+    .show {
+      animation: alternate shows 0.4s forwards;
+      position: absolute;
+      top: -20%;
+      left: -90%;
+
+      width: 135px;
+      height: 103px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+
+      h3 {
+        animation: alternate shows2 2s forwards;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 9px;
+        text-align: center;
+
+        margin-bottom: 13px;
+      }
+      p {
+        animation: alternate shows2 4s forwards;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 7px;
+        line-height: 8px;
+        text-align: center;
+      }
+    }
+  }
   div {
     height: 100%;
     text-align: center;
+
     .circle {
       width: 50px;
       height: 50px;
@@ -45,6 +81,30 @@ const FooterStyle = styled.div`
 
     .box {
       border: 2px solid white;
+    }
+  }
+
+  @keyframes shows {
+    0% {
+      top: 50%;
+      left: 0%;
+      width: 0;
+      height: 0;
+    }
+    100% {
+      top: -20%;
+      left: -90%;
+      width: 135px;
+      height: 103px;
+    }
+  }
+
+  @keyframes shows2 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `;
