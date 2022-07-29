@@ -12,7 +12,7 @@ module.exports = {
     },
   },
   output: {
-    chunkLoadTimeout: 30000,
+    chunkLoadTimeout: 3000,
     filename: "[name].bundle.[contenthash].js",
     charset: true,
     path: path.resolve(__dirname, "dist"),
@@ -22,7 +22,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_module/,
         use: [
           "babel-loader",
