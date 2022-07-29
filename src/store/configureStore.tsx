@@ -1,7 +1,7 @@
 import React from "react";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
-import { loginReducer } from "../reducers/login/loginReducer";
+import { loginReducer } from "../reducers/login/loginReducers";
 
 const rootReducer = combineReducers({
   loginReducer,
