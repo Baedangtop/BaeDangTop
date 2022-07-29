@@ -24,15 +24,7 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_module/,
-        use: [
-          "babel-loader",
-          {
-            loader: "ts-loader",
-            options: {
-              transpileOnly: true,
-            },
-          },
-        ],
+        use: ["swc-loader"],
         exclude: /node_modules/,
       },
     ],
