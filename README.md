@@ -4,7 +4,7 @@
 
 - 프레임워크: react
 - 번들러: webpack
-- 컴파일: babel-loader, ts-loader
+- 컴파일: babel-loader, ts-loader -> babel에서 swc로 마이그레이션 swc-loader 사용
 - 언어: typescript
 - 패키지 관리 툴: yarn
 - 스타일: styled-compoents
