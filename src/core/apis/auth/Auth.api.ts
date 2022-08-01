@@ -3,7 +3,7 @@ import { LoginParam, RegisterParam } from "./auth.param";
 class Auth {
   public async login(param: LoginParam): Promise<any> {
     // login 통신, 세션 정보 저장
-    return param;
+    return true;
   }
 
   public async register(param: RegisterParam): Promise<any> {

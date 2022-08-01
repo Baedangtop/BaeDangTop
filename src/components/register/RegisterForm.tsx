@@ -11,7 +11,10 @@ const RegisterForm = () => {
 
   const SendRegisterRequest = useCallback((e: any) => {
     e.preventDefault();
-    Auth.login({ id: idRef.current.value, pw: idRef.current.value });
+    Auth.login({
+      id: idRef.current.value,
+      pw: idRef.current.value,
+    });
   }, []);
 
   return (
