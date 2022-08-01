@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from "react";
 import LoginInput from "./LoginInput";
 import Auth from "../../core/apis/auth/Auth.api";
 
-// 비제어 컴포넌트 형식
+// 비제어 컴포넌트 방식
 const LoginForm = () => {
   const idRef = useRef<HTMLFormElement>();
   const pwRef = useRef<HTMLFormElement>();

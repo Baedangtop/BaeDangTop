@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useCheckLogin } from "./core/hooks/useLoginCheck";
 import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 const App = () => {
   const { login } = useSelector((state: any) => state.loginReducer);
@@ -13,7 +14,7 @@ const App = () => {
         {!login ? (
           <>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/register" element={<div>register</div>}></Route>
+            <Route path="/register" element={<Register />}></Route>
             <Route path="*" element={<Login />}></Route>
             {/* {useCheckLogin()} */}
           </>
