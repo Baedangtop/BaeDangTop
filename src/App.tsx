@@ -15,7 +15,7 @@ const App = () => {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<div>register</div>}></Route>
             <Route path="*" element={<Login />}></Route>
-            {useCheckLogin()}
+            {/* {useCheckLogin()} */}
           </>
         ) : (
           <>
