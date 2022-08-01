@@ -27,11 +27,19 @@ module.exports = {
         use: ["swc-loader"],
         exclude: /node_modules/,
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   resolve: {
     modules: [path.resolve(__dirname, "src"), "node_modules"],
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: [".js", ".ts", ".tsx", ".png"],
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
