@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import LoginInput from "./LoginInput";
+import Auth from "../../core/apis/auth/Auth.api";
 
 // 비제어 컴포넌트 형식
 const LoginForm = () => {
@@ -8,8 +9,7 @@ const LoginForm = () => {
 
   const SendLoginRequest = useCallback((e: any) => {
     e.preventDefault();
-    console.log(idRef.current.value);
-    console.log(pwRef.current.value);
+    Auth.login({ id: idRef.current.value, pw: idRef.current.value });
   }, []);
 
   return (
