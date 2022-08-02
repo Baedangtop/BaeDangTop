@@ -11,16 +11,18 @@ const RegisterForm = () => {
 
   const SendRegisterRequest = useCallback((e: any) => {
     e.preventDefault();
-    Auth.login({
-      id: idRef.current.value,
-      pw: idRef.current.value,
+    const bool = Auth.register({
+      name: nameRef.current.value,
+      email: idRef.current.value,
+      password: pwRef.current.value,
     });
+    console.log(bool);
   }, []);
 
   return (
     <>
       <form>
-        <RegisterInput type="password" title="비밀번호" refs={nameRef} />
+        <RegisterInput type="text" title="이름" refs={nameRef} />
         <RegisterInput type="text" title="아이디" refs={idRef} />
         <RegisterInput type="password" title="비밀번호" refs={pwRef} />
         <RegisterInput
@@ -28,7 +30,7 @@ const RegisterForm = () => {
           title="비밀번호 확인"
           refs={pwCheckRef}
         />
-        <button onClick={SendRegisterRequest}>로그인</button>
+        <button onClick={SendRegisterRequest}>회원가입</button>
       </form>
       <p className="p__navigation--login">이미 회원이신가요? 로그인</p>
     </>

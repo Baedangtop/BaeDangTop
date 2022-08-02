@@ -14,8 +14,8 @@ const LoginForm = () => {
   const SendLoginRequest = useCallback((e: any) => {
     e.preventDefault();
     const bool = Auth.login({
-      id: idRef.current.value,
-      pw: idRef.current.value,
+      email: idRef.current.value,
+      password: pwRef.current.value,
     });
     if (!bool) {
       return;

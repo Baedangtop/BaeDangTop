@@ -1,10 +1,10 @@
 export interface LoginParam {
-  id: string;
-  pw: string;
+  email: string;
+  password: string;
 }
 
 export interface RegisterParam {
   name: string;
-  id: string;
-  pw: string;
+  email: string;
+  password: string;
 }
