@@ -7,7 +7,7 @@ const Info = () => {
     <InfoStyle>
       <p className="title">
         Top 10 주식
-        <span className="title__gray">배당률 높은 순</span>
+        <span className="title__gray">수익률 높은 순</span>
       </p>
       <Item />
       <Item />
