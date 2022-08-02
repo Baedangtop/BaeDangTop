@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <FooterStyle>
       <div className="des">
-        <img src={logo} />
+        <img src={logo} alt="footer" />
         <div className="producer">
           <div className="people">
             <div className="name">최유민</div>

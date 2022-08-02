@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    "react-vendors": ["react", "react-dom"],
+    "react-vendors": ["react", "react-dom", "react-router-dom"],
     main: {
       import: "./src/index.tsx",
       runtime: "runtime",
@@ -18,6 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "assets/[contenthash][ext]",
     clean: true,
+    publicPath: "/",
   },
   module: {
     rules: [
