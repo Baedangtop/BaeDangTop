@@ -10,6 +10,10 @@ const Info = () => {
         <span className="title__gray">배당률 높은 순</span>
       </p>
       <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </InfoStyle>
   );
 };
