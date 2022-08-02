@@ -1,11 +1,11 @@
 import { LoginParam, RegisterParam } from "./auth.param";
-import axios from "axios";
+import { customAxios } from "../../util/customAxios";
 
 class Auth {
   public async login(param: LoginParam): Promise<any> {
     // login 통신, 세션 정보 저장
     const { email, password } = param;
-    const data = await axios.post("http://192.168.1.175:8080/auth/login", {
+    const data = await customAxios.post("/auth/login", {
       email,
       password,
     });
@@ -18,7 +18,7 @@ class Auth {
   public async register(param: RegisterParam): Promise<any> {
     // register 통신
     const { email, name, password } = param;
-    const data = await axios.post("http://192.168.1.175:8080/auth/signup", {
+    const data = await customAxios.post("/auth/signup", {
       name,
       email,
       password,
