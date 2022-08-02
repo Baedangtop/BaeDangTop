@@ -19,10 +19,12 @@ const CalculatorStyle = styled.div`
   }
 
   .drop__down {
-    width: 752px;
+    width: 792px;
     margin: 0 auto;
     min-height: 74px;
     border-bottom: 1px solid #dbdbdb;
+    padding-left: 20px;
+    padding-right: 20px;
     .nomal {
       display: flex;
       justify-content: space-between;
@@ -64,6 +66,58 @@ const CalculatorStyle = styled.div`
     }
     [class^="detail__write"] + [class^="detail__write"] {
       margin-left: 18px;
+    }
+  }
+
+  .cal {
+    margin-top: 40px;
+    p {
+      height: 88px;
+
+      label {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.02em;
+        color: #000000;
+        padding-bottom: 8px;
+      }
+      input {
+        display: block;
+        width: 100%;
+        height: 60px;
+        border: 1px solid #dbdbdb;
+        border-radius: 15px;
+        outline: none;
+      }
+    }
+    p + p {
+      margin-top: 18px;
+    }
+    button {
+      background: #000000;
+      border-radius: 15px;
+      color: white;
+      width: 792px;
+      height: 60px;
+      margin-top: 46px;
+      outline: none;
+      border: none;
+
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 35px;
+      letter-spacing: -0.02em;
+    }
+    .result {
+      margin-top: 40px;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 60px;
+        border: 1px solid #dbdbdb;
+        border-radius: 15px;
+      }
     }
   }
 `;
