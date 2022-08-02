@@ -13,8 +13,8 @@ export const result = [
       result: "A/B",
     },
     {
-      input: ["주당배당금", "기초주가"], // 고민
-      result: "A/B",
+      input: ["최초 금액", "이자 발생", "연수"], // 고민
+      result: "A*((1+(C*0.01)/1)**(1*D))",
     },
     {
       input: ["배당금", "주식수"],
