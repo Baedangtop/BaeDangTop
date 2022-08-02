@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../stockItem/Item";
+import Item from "../stockItem/item";
 import InfoStyle from "./info.style";
 
 const Info = () => {
