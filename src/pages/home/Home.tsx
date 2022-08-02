@@ -1,5 +1,6 @@
 import React from "react";
 import HomeHeader from "../../components/home/header/HomeHeader";
+import Notice from "../../components/home/stock/notice/Notice";
 import Stock from "../../components/home/stock/Stock";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <HomeHeader />
       <Stock />
+      <Notice />
     </div>
   );
 };

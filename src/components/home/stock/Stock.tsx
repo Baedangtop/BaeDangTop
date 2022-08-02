@@ -15,6 +15,7 @@ const Stock = () => {
 const StockStyle = styled.div`
   width: 792px;
   margin: 0 auto;
+  margin-bottom: 100px;
 `;
 
 export default Stock;
