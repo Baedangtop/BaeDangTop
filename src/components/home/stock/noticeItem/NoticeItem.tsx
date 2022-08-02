@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import NoticeDetail from "../noticeDetail/NoticeDetail";
 import NoticeItemStyle from "./noticeItem.style";
 
 const NoticeItem = () => {
@@ -26,7 +27,7 @@ const NoticeItem = () => {
           +
         </button>
       </div>
-      {toggle && <div>loading...</div>}
+      {toggle && <NoticeDetail />}
     </NoticeItemStyle>
   );
 };

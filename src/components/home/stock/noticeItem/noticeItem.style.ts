@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const NoticeItemStyle = styled.div`
   width: 792px;
-  height: 264px;
+  min-height: 264px;
   border-bottom: 1px solid #dbdbdb;
   margin-bottom: 24px;
   font-weight: 400;
