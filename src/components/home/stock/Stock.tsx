@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Info from "./info/Info";
 import Search from "./search/Search";
 import StockApi from "../../../core/apis/stock/Stock.api";
+import StockButton from "./button";
 
 const Stock = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const Stock = () => {
     <StockStyle>
       <Search />
       <Info />
+      <StockButton />
     </StockStyle>
   );
 };
