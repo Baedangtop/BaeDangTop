@@ -3,6 +3,15 @@ import styled from "styled-components";
 const NoticeStyle = styled.div`
   width: 792px;
   margin: 0 auto;
+  position: relative;
+
+  .notice--container {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
   .title {
     margin-bottom: 40px;
     display: flex;

@@ -1,11 +1,31 @@
 import styled from "styled-components";
 
 const NoticeDetailStyle = styled.div`
-  margin-top: 8px;
-  padding-bottom: 24px;
+  position: absolute;
+  top: calc(50% - 212px);
+  left: calc(50% - 212px);
+  width: 424px;
+  height: 423px;
+
+  z-index: 30;
+
+  background: #ffffff;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+
+  padding-top: 24px;
+
+  .c {
+    height: 214px;
+    overflow: scroll;
+  }
 
   .comment {
-    margin-bottom: 20px;
+    width: 338px;
+    height: 48px;
+    margin: 0 auto;
+
+    margin-bottom: 32px;
     height: 56px;
     display: flex;
     align-items: center;
@@ -27,24 +47,42 @@ const NoticeDetailStyle = styled.div`
   }
 
   .comment__input {
+    padding-top: 10px;
+    padding-left: 18px;
+    margin: 0 auto;
     margin-top: 16px;
-    height: 48px;
-    border: 1px solid #b4b4b4;
+    height: 79px;
+    width: 376px;
+
+    border: 1px solid #dbdbdb;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    overflow: hidden;
 
-    input {
-      width: 728px;
-      height: 100%;
-      border: none;
-      outline: none;
+    outline: none;
+    resize: none;
+  }
+  .button__container {
+    margin: 0 auto;
+    margin-top: 18px;
+    width: 376px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .x {
+      width: 178px;
+      height: 40px;
+      background: #ffffff;
+      border: 1px solid #000000;
+      border-radius: 15px;
     }
-    span {
-      width: 28px;
-      height: 28px;
-      border: 1px solid black;
+    .o {
+      width: 180px;
+      height: 40px;
+      background: #000000;
+      border-radius: 15px;
+      color: white;
     }
   }
 `;

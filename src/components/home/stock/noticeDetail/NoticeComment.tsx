@@ -6,8 +6,6 @@ const NoticeComment = () => {
       <div className="picture"></div>
       <div className="write">
         내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-        내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-        내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
       </div>
     </div>
   );

@@ -13,9 +13,11 @@ const Notice = () => {
           <div className="title__info--free">자유게시판</div>
         </div>
       </p>
-      <NoticeItem />
-      <NoticeItem />
-      <NoticeItem />
+      <div className="notice--container">
+        <NoticeItem />
+        <NoticeItem />
+        <NoticeItem />
+      </div>
     </NoticeStyle>
   );
 };
