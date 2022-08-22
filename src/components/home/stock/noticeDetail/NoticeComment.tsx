@@ -1,12 +1,10 @@
 import React from "react";
 
-const NoticeComment = () => {
+const NoticeComment = ({ v }) => {
   return (
     <div className="comment">
       <div className="picture"></div>
-      <div className="write">
-        내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-      </div>
+      <div className="write">{v.writing}</div>
     </div>
   );
 };

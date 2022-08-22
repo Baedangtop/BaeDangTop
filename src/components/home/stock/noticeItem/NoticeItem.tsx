@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useSelector } from "react-redux";
 import NoticeDetail from "../noticeDetail/NoticeDetail";
 import NoticeItemStyle from "./noticeItem.style";
 
@@ -22,7 +23,7 @@ const NoticeItem = ({ v }) => {
       </div>
       <div className="item__title">{v.title}</div>
       <div className="description">{v.description}</div>
-      {toggle && <NoticeDetail changeToggle={changeToggle} />}
+      {toggle && <NoticeDetail changeToggle={changeToggle} v={v} />}
     </NoticeItemStyle>
   );
 };

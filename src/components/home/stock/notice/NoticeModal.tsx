@@ -30,6 +30,7 @@ const NoticeModal = ({ changeShow }) => {
         image: preview,
         title: titleRef.current.value,
         description: titleRef.current.value,
+        comment: [],
       },
     });
     changeShow();
