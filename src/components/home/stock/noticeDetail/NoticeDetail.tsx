@@ -48,6 +48,7 @@ const NoticeDetail = ({ changeToggle, v }) => {
       <textarea
         className="comment__input"
         placeholder="댓글을 작성해 주세요"
+        maxLength={50}
         ref={textRef}
       />
       <div className="button__container">

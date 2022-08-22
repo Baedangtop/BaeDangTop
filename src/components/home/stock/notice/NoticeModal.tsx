@@ -60,11 +60,13 @@ const NoticeModal = ({ changeShow }) => {
         className="title"
         placeholder="게시물 제목을 작성해 주세요"
         ref={titleRef}
+        maxLength={20}
       ></input>
       <textarea
         className="description"
         placeholder="게시물 내용을 작성해 주세요"
         ref={desRef}
+        maxLength={100}
       ></textarea>
       <div className="button__container">
         <button className="x" onClick={changeShow}>
