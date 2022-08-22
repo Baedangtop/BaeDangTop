@@ -22,7 +22,7 @@ const NoticeItem = () => {
       <div className="description">
         게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용
       </div>
-      {toggle && <NoticeDetail />}
+      {toggle && <NoticeDetail changeToggle={changeToggle} />}
     </NoticeItemStyle>
   );
 };
