@@ -28,6 +28,11 @@ const NoticeItemStyle = styled.div`
     width: 100%;
     height: 156px;
     background-color: #b4b4b4;
+    overflow: scroll;
+
+    img {
+      width: 100%;
+    }
   }
   .item__title {
     margin-top: 24px;

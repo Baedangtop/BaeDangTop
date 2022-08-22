@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import NoticeItem from "../noticeItem/NoticeItem";
 import NoticeStyle from "./notice.style";
 import NoticeModal from "./NoticeModal";
@@ -8,6 +9,7 @@ const Notice = () => {
   const changeShow = useCallback(() => {
     setShow((prev) => !prev);
   }, []);
+  const { item } = useSelector((state: any) => state.NoticeReducer);
 
   return (
     <NoticeStyle>
@@ -20,11 +22,11 @@ const Notice = () => {
         </div>
       </p>
       <div className="notice--container">
-        <NoticeItem />
-        <NoticeItem />
-        <NoticeItem />
+        {item.map((v: any) => (
+          <NoticeItem v={v} />
+        ))}
       </div>
-      {show && <NoticeModal />}
+      {show && <NoticeModal changeShow={changeShow} />}
     </NoticeStyle>
   );
 };
