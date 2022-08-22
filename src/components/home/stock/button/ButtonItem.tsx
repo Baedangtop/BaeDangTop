@@ -1,7 +1,11 @@
 import React from "react";
 
-const ButtonItem = ({ des }) => {
-  return <div className="button--item">{des}</div>;
+const ButtonItem = ({ des, changePage }) => {
+  return (
+    <div className="button--item" onClick={changePage}>
+      {des}
+    </div>
+  );
 };
 
 export default ButtonItem;
