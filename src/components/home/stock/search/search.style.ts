@@ -12,6 +12,45 @@ const SearchStyle = styled.div`
   letter-spacing: -0.02em;
   color: #000000;
 
+  .flex {
+    display: flex;
+  }
+
+  .select--container {
+    width: 125px;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #bcbcbc;
+    border-radius: 15px;
+    margin-right: 18px;
+    position: relative;
+
+    .current {
+      width: 100%;
+      height: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: -0.02em;
+      color: #bcbcbc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .select {
+      position: absolute;
+      width: 100%;
+      border: 1px solid #bcbcbc;
+      background-color: white;
+
+      li {
+        color: #bcbcbc;
+        list-style: none;
+        text-align: center;
+      }
+    }
+  }
+
   .p__title--search-name {
     font-weight: 500;
     font-size: 28px;
