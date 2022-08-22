@@ -29,7 +29,7 @@ const NoticeModal = ({ changeShow }) => {
           date.getDate(),
         image: preview,
         title: titleRef.current.value,
-        description: titleRef.current.value,
+        description: desRef.current.value,
         comment: [],
       },
     });
