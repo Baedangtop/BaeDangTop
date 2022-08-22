@@ -47,6 +47,7 @@ const NoticeItemStyle = styled.div`
     line-height: 26px;
     letter-spacing: -0.02em;
     color: #b4b4b4;
+    word-break: break-all;
   }
 `;
 
