@@ -17,18 +17,20 @@ const NoticeDetail = ({ changeToggle, v }) => {
   }, []);
 
   const successWriting = useCallback(async () => {
-    await dispatch({
-      type: ADD_COMMENT,
-      data: {
-        id: v.id,
-        image: null,
-        writing: textRef.current.value,
-      },
-    });
-    textRef.current.value = "";
-    textRef.current.focus();
+    if (textRef.current.value !== "") {
+      await dispatch({
+        type: ADD_COMMENT,
+        data: {
+          id: v.id,
+          image: null,
+          writing: textRef.current.value,
+        },
+      });
+      textRef.current.value = "";
+      textRef.current.focus();
 
-    cRef.current.scrollTo(0, cRef.current.clientHeight + 72);
+      cRef.current.scrollTo(0, cRef.current.clientHeight + 72);
+    }
   }, []);
 
   return (

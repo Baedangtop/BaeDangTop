@@ -17,23 +17,25 @@ const NoticeModal = ({ changeShow }) => {
   }, []);
 
   const addPostNotice = useCallback(() => {
-    const date = new Date();
-    dispatch({
-      type: ADD_NOTICE,
-      data: {
-        date:
-          date.getFullYear() +
-          "." +
-          (date.getMonth() + 1) +
-          "." +
-          date.getDate(),
-        image: preview,
-        title: titleRef.current.value,
-        description: desRef.current.value,
-        comment: [],
-      },
-    });
-    changeShow();
+    if (titleRef.current.value !== "") {
+      const date = new Date();
+      dispatch({
+        type: ADD_NOTICE,
+        data: {
+          date:
+            date.getFullYear() +
+            "." +
+            (date.getMonth() + 1) +
+            "." +
+            date.getDate(),
+          image: preview,
+          title: titleRef.current.value,
+          description: desRef.current.value,
+          comment: [],
+        },
+      });
+      changeShow();
+    }
   }, [dispatch, preview]);
 
   return (
@@ -57,7 +59,9 @@ const NoticeModal = ({ changeShow }) => {
         ref={desRef}
       ></textarea>
       <div className="button__container">
-        <button className="x">취소</button>
+        <button className="x" onClick={changeShow}>
+          취소
+        </button>
         <button className="o" onClick={addPostNotice}>
           확인
         </button>

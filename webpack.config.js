@@ -8,7 +8,7 @@ module.exports = {
     "react-vendors": ["react", "react-dom", "react-router-dom"],
     main: {
       import: "./src/index.tsx",
-      dependency: "runtime",
+      runtime: "runtime",
     },
   },
   output: {
