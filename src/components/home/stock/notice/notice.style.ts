@@ -3,7 +3,6 @@ import styled from "styled-components";
 const NoticeStyle = styled.div`
   width: 792px;
   margin: 0 auto;
-  position: relative;
 
   .notice--container {
     display: flex;
@@ -73,11 +72,8 @@ const NoticeStyle = styled.div`
   .modal {
     padding: 24px;
     position: absolute;
-    top: 50%;
     left: 50%;
-
-    transform: translate(-50%, -50%);
-
+    transform: translate(-50%, 50%);
     width: 424px;
     height: 423px;
 

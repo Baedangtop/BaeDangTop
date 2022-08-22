@@ -4,6 +4,7 @@ const DetailStyle = styled.div`
   margin: 0 auto;
   margin-top: 37px;
   margin-bottom: 18px;
+  padding-bottom: 16px;
 
   width: 700px;
   height: 170px;

@@ -38,8 +38,16 @@ const NoticeModal = ({ changeShow }) => {
     }
   }, [dispatch, preview]);
 
+  useEffect(() => {
+    const modal = document.getElementById("m");
+    modal.style.top = `${window.scrollY}px`;
+    console.log(window.scrollY);
+  }, []);
+
+  const modalRef = useRef<HTMLDivElement>();
+
   return (
-    <div className="modal">
+    <div className="modal" ref={modalRef} id="m">
       <div className="picture">
         <div className="preview">
           <img src={preview} />

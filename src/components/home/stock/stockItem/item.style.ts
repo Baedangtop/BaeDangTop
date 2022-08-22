@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ItemStyle = styled.div`
   border-bottom: 1px solid #dbdbdb;
+
   .basic {
     height: 80px;
 
