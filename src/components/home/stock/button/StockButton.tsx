@@ -1,20 +1,36 @@
 import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  CHANGE_END_PAGE,
+  CHANGE_MAX_START_PAGE,
+  CHANGE_START_PAGE,
+  CHANGE_MAX_END_PAGE,
+} from "../../../../reducers/stock/stockReducers";
 import ButtonItem from "./ButtonItem";
 import StockButtonStyle from "./stockButton.style";
 
 const StockButton = () => {
-  const [page, setPage] = useState(1);
+  const page = useSelector((state: any) => state.stockReducer.page);
+  const dispatch = useDispatch();
   const changeMaxStartPage = useCallback(() => {
-    setPage(1);
+    dispatch({
+      type: CHANGE_MAX_START_PAGE,
+    });
   }, []);
   const changeStartPage = useCallback(() => {
-    setPage((prev) => (prev > 1 ? prev - 5 : prev));
+    dispatch({
+      type: CHANGE_START_PAGE,
+    });
   }, []);
   const changeMaxEndPage = useCallback(() => {
-    setPage(116);
+    dispatch({
+      type: CHANGE_MAX_END_PAGE,
+    });
   }, []);
   const changeEndPage = useCallback(() => {
-    setPage((prev) => (prev < 116 ? prev + 5 : prev));
+    dispatch({
+      type: CHANGE_END_PAGE,
+    });
   }, []);
 
   return (
