@@ -28,7 +28,16 @@ const ItemStyle = styled.div`
       height: 48px;
       width: 240px;
 
-      border: 1px solid black;
+      svg {
+        width: 100%;
+        height: 100%;
+
+        polyline {
+          fill: none;
+          stroke: blue;
+          stroke-width: 2px;
+        }
+      }
     }
 
     .price {
