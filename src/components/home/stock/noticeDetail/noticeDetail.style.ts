@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const NoticeDetailStyle = styled.div`
   position: absolute;
-  top: calc(50% - 212px);
   left: calc(50% - 212px);
   width: 424px;
   height: 423px;

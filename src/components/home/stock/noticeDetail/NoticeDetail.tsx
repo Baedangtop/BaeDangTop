@@ -33,8 +33,13 @@ const NoticeDetail = ({ changeToggle, v }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const modal = document.getElementById("m");
+    modal.style.top = `${window.scrollY + 212}px`;
+  }, []);
+
   return (
-    <NoticeDetailStyle>
+    <NoticeDetailStyle id="m">
       <div className="c" ref={cRef}>
         {v.comment.map((value: any) => (
           <NoticeComment v={value} />
