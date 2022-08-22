@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { memo, useCallback, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { ADD_COMMENT } from "../../../../reducers/notice/NoticeReducer";
 import NoticeComment from "./NoticeComment";
 import NoticeDetailStyle from "./noticeDetail.style";
 
-const NoticeDetail = ({ changeToggle, v }) => {
+const NoticeDetail = memo(({ changeToggle, v }: any) => {
   const dispatch = useDispatch();
   const textRef = useRef<HTMLTextAreaElement>();
   const cRef = useRef<HTMLDivElement>();
@@ -17,13 +17,13 @@ const NoticeDetail = ({ changeToggle, v }) => {
   }, []);
 
   const successWriting = useCallback(async () => {
-    if (textRef.current.value !== "") {
+    if (/[^\s]/.test(textRef.current.value)) {
       await dispatch({
         type: ADD_COMMENT,
         data: {
           id: v.id,
           image: null,
-          writing: textRef.current.value,
+          writing: textRef.current.value.replace(/^\s/, ""),
         },
       });
       textRef.current.value = "";
@@ -61,6 +61,6 @@ const NoticeDetail = ({ changeToggle, v }) => {
       </div>
     </NoticeDetailStyle>
   );
-};
+});
 
 export default NoticeDetail;

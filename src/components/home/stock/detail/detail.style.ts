@@ -12,7 +12,7 @@ const DetailStyle = styled.div`
   display: flex;
 
   .allocation {
-    width: 206px;
+    width: 215px;
     height: 100%;
     margin-right: 100px;
 
@@ -27,7 +27,7 @@ const DetailStyle = styled.div`
       display: flex;
 
       .allocation__info--payment {
-        width: 72px;
+        width: 78px;
         margin-right: 95px;
 
         .allocation__info--payment-title {
@@ -47,7 +47,7 @@ const DetailStyle = styled.div`
         }
       }
       .allocation__info--dividend {
-        width: 39px;
+        width: 42px;
 
         .allocation__info--dividend-title {
           font-weight: 400;

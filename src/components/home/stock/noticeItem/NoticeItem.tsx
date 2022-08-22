@@ -1,9 +1,8 @@
-import React, { useCallback, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { memo, useCallback, useState } from "react";
 import NoticeDetail from "../noticeDetail/NoticeDetail";
 import NoticeItemStyle from "./noticeItem.style";
 
-const NoticeItem = ({ v }) => {
+const NoticeItem = memo(({ v }: any) => {
   const [toggle, setToggle] = useState(false);
 
   const changeToggle = useCallback(() => {
@@ -26,6 +25,6 @@ const NoticeItem = ({ v }) => {
       {toggle && <NoticeDetail changeToggle={changeToggle} v={v} />}
     </NoticeItemStyle>
   );
-};
+});
 
 export default NoticeItem;

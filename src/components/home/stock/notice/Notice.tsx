@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import NoticeItem from "../noticeItem/NoticeItem";
 import NoticeStyle from "./notice.style";
 import NoticeModal from "./NoticeModal";

@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, lazy } from "react";
 
-import img1 from "../../../assets/images/logo.png";
-import img2 from "../../../assets/images/logo.png";
-import img3 from "../../../assets/images/logo.png";
+const img1 = lazy(() => import("../../../assets/images/logo.png"));
+const img2 = lazy(() => import("../../../assets/images/logo.png"));
+const img3 = lazy(() => import("../../../assets/images/logo.png"));
 
 import Slide from "./Slide";
 import { Container, SliderContainer } from "./slider.style";

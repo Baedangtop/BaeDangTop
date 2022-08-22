@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Profile from "./pages/profile/Profile";
 
+const Profile = lazy(() => import("./pages/profile/Profile"));
 const Home = lazy(() => import("./pages/home/Home"));
 const Login = lazy(() => import("./pages/login/Login"));
 const Register = lazy(() => import("./pages/register/Register"));

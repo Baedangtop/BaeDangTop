@@ -28,7 +28,7 @@ const NoticeItemStyle = styled.div`
     width: 100%;
     height: 156px;
     background-color: #b4b4b4;
-    overflow: scroll;
+    overflow-y: scroll;
 
     img {
       width: 100%;
@@ -40,6 +40,7 @@ const NoticeItemStyle = styled.div`
     line-height: 35px;
     letter-spacing: -0.02em;
     color: #000000;
+    word-break: break-all;
   }
   .description {
     margin-top: 8px;

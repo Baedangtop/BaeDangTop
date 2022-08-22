@@ -91,7 +91,7 @@ const NoticeStyle = styled.div`
 
       .preview {
         height: 100%;
-        overflow: scroll;
+        overflow-y: scroll;
         img {
           width: 100%;
         }
@@ -121,6 +121,10 @@ const NoticeStyle = styled.div`
           opacity: 0;
         }
       }
+    }
+
+    input {
+      word-break: break-all;
     }
     .title {
       margin: 0;

@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_NOTICE } from "../../../../reducers/notice/NoticeReducer";
 
-const NoticeModal = ({ changeShow }) => {
+const NoticeModal = memo(({ changeShow }: any) => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState<string>();
   const titleRef = useRef<HTMLInputElement>();
@@ -17,7 +17,7 @@ const NoticeModal = ({ changeShow }) => {
   }, []);
 
   const addPostNotice = useCallback(() => {
-    if (titleRef.current.value !== "") {
+    if (/[^\s]/.test(titleRef.current.value)) {
       const date = new Date();
       dispatch({
         type: ADD_NOTICE,
@@ -78,6 +78,6 @@ const NoticeModal = ({ changeShow }) => {
       </div>
     </div>
   );
-};
+});
 
 export default NoticeModal;
