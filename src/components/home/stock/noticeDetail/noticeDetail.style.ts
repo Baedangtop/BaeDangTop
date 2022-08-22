@@ -37,6 +37,7 @@ const NoticeDetailStyle = styled.div`
       flex-shrink: 0;
     }
     .write {
+      word-break: break-all;
       font-weight: 400;
       font-size: 18px;
       line-height: 26px;
@@ -52,6 +53,8 @@ const NoticeDetailStyle = styled.div`
     margin-top: 16px;
     height: 79px;
     width: 376px;
+
+    word-break: break-all;
 
     border: 1px solid #dbdbdb;
     border-radius: 15px;

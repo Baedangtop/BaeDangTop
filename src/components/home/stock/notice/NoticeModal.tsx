@@ -66,7 +66,7 @@ const NoticeModal = ({ changeShow }) => {
         className="description"
         placeholder="게시물 내용을 작성해 주세요"
         ref={desRef}
-        maxLength={100}
+        maxLength={60}
       ></textarea>
       <div className="button__container">
         <button className="x" onClick={changeShow}>
