@@ -11,9 +11,9 @@ const LoginForm = () => {
   const idRef = useRef<HTMLFormElement>();
   const pwRef = useRef<HTMLFormElement>();
 
-  const SendLoginRequest = useCallback((e: any) => {
+  const SendLoginRequest = useCallback(async (e: any) => {
     e.preventDefault();
-    const bool = Auth.login({
+    const bool = await Auth.login({
       email: idRef.current.value,
       password: pwRef.current.value,
     });
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
     dispatch({
       type: LOGIN,
-      data: { id: idRef.current.value, pw: idRef.current.value },
+      data: bool.name,
     });
   }, []);
 

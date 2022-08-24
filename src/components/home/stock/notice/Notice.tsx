@@ -1,5 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import BoardApi from "../../../../core/apis/board/Board.api";
 import NoticeItem from "../noticeItem/NoticeItem";
 import NoticeStyle from "./notice.style";
 import NoticeModal from "./NoticeModal";
@@ -10,6 +11,10 @@ const Notice = () => {
     setShow((prev) => !prev);
   }, []);
   const { item } = useSelector((state: any) => state.NoticeReducer);
+
+  useEffect(() => {
+    BoardApi.getBoards();
+  }, []);
 
   return (
     <NoticeStyle>
