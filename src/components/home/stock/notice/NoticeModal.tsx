@@ -20,11 +20,10 @@ const NoticeModal = memo(({ changeShow }: any) => {
   const addPostNotice = useCallback(() => {
     if (/[^\s]/.test(titleRef.current.value)) {
       const date = new Date();
-      BoardApi.postBoards(
-        preview,
-        titleRef.current.value,
-        desRef.current.value
-      );
+      const frm = new FormData();
+      frm.append("preview", image);
+
+      BoardApi.postBoards(frm, titleRef.current.value, desRef.current.value);
 
       dispatch({
         type: ADD_NOTICE,

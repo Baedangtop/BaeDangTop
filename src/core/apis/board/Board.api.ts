@@ -1,4 +1,3 @@
-import axios from "axios";
 import { customAxios } from "../../util/customAxios";
 
 class Board {
@@ -8,9 +7,16 @@ class Board {
     return value.data.list;
   }
   public async postBoards(preview, title, description) {
-    const preivewSave = await customAxios.post(`/boards/attachments/`, {
+    const preivewSave = await customAxios.post(
+      `/boards/attachments/`,
       preview,
-    });
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
     const value = await customAxios.post(`/boards/`, {
       attachments: preivewSave,
       title,
