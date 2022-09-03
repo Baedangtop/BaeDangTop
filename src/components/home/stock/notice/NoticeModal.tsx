@@ -1,5 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import BoardApi from "../../../../core/apis/board/Board.api";
 import { ADD_NOTICE } from "../../../../reducers/notice/NoticeReducer";
 
 const NoticeModal = memo(({ changeShow }: any) => {
@@ -19,6 +20,12 @@ const NoticeModal = memo(({ changeShow }: any) => {
   const addPostNotice = useCallback(() => {
     if (/[^\s]/.test(titleRef.current.value)) {
       const date = new Date();
+      BoardApi.postBoards(
+        preview,
+        titleRef.current.value,
+        desRef.current.value
+      );
+
       dispatch({
         type: ADD_NOTICE,
         data: {
