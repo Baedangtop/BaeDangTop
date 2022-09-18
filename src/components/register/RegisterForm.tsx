@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import RegisterInput from "./RegisterInput";
 import Auth from "../../core/apis/auth/Auth.api";
+import { Link } from "react-router-dom";
 
 // 비제어 컴포넌트 방식
 const RegisterForm = () => {
@@ -32,7 +33,12 @@ const RegisterForm = () => {
         />
         <button onClick={SendRegisterRequest}>회원가입</button>
       </form>
-      <p className="p__navigation--login">이미 회원이신가요? 로그인</p>
+      <p className="p__navigation--login">
+        이미 회원이신가요?
+        <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+          로그인
+        </Link>
+      </p>
     </>
   );
 };

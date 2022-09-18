@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import LoginInput from "./LoginInput";
 import Auth from "../../core/apis/auth/Auth.api";
 import { LOGIN } from "../../reducers/login/loginAction";
+import { Link } from "react-router-dom";
 
 // 비제어 컴포넌트 방식
 const LoginForm = () => {
@@ -35,7 +36,10 @@ const LoginForm = () => {
         <button onClick={SendLoginRequest}>로그인</button>
       </form>
       <p className="p__navigation--register">
-        아직 회원이 아니신가요? 회원가입
+        아직 회원이 아니신가요?{" "}
+        <Link to="/register" style={{ textDecoration: "none", color: "black" }}>
+          회원가입
+        </Link>
       </p>
     </>
   );

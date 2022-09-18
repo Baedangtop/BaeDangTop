@@ -18,7 +18,7 @@ class Board {
     );
 
     const value = await customAxios.post(`/boards/`, {
-      attachments: preivewSave,
+      attachments: [preivewSave.data],
       title,
       content: description,
     });
