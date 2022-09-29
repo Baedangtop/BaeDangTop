@@ -20,7 +20,7 @@ const HomeHeaderStyle = styled.div`
 
       img {
         width: 48px;
-        height: 100%;
+        height: 48px;
         margin: 0;
         margin-left: 18px;
       }
