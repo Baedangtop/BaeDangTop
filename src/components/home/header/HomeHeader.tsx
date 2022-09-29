@@ -6,7 +6,13 @@ import Carousel from "../carousel/Carousel";
 const HomeHeader = () => {
   return (
     <HomeHeaderStyle>
-      <img src={logo} alt="logo_image" />
+      <div className="flex">
+        <img src={logo} alt="logo_image" />
+        <div>
+          <p>로그아웃</p>
+          <img src="" alt="" />
+        </div>
+      </div>
       <Carousel />
     </HomeHeaderStyle>
   );
