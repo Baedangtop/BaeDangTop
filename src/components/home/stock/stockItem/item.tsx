@@ -11,20 +11,10 @@ const Item = memo(({ graph }: any) => {
   const [max, setMax] = useState(0);
   const [min, setMin] = useState(0);
 
-  useEffect(() => {
-    setMax(
-      graph.dividendHistories.reduce(
-        (max: number, v: any) => (max < v.y ? v.y : max),
-        0
-      )
-    );
-    setMin(
-      graph.dividendHistories.reduce(
-        (min: number, v: any) => (min > v.y ? v.y : min),
-        100
-      )
-    );
-  }, [graph]);
+  // useEffect(() => {
+  //   setMax(graph.reduce((max: number, v: any) => (max < v.y ? v.y : max), 0));
+  //   setMin(graph.reduce((min: number, v: any) => (min > v.y ? v.y : min), 100));
+  // }, [graph]);
 
   return (
     <ItemStyle>
@@ -32,7 +22,7 @@ const Item = memo(({ graph }: any) => {
         <div className="logo"></div>
         <div className="name">Amazon</div>
         <div className="graph">
-          <svg>
+          {/* <svg>
             <polyline
               points={graph
                 .map((v: { x: number; y: number }, index: number) => {
@@ -42,7 +32,7 @@ const Item = memo(({ graph }: any) => {
                 })
                 .join(" ")}
             ></polyline>
-          </svg>
+          </svg> */}
         </div>
         <div className="price">
           <div className="price__current">149.24</div>

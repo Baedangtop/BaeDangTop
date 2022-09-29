@@ -35,7 +35,7 @@ const RegisterForm = () => {
       </form>
       <p className="p__navigation--login">
         이미 회원이신가요?
-        <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           로그인
         </Link>
       </p>

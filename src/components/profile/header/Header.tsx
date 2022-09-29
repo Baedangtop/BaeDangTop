@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,8 +13,13 @@ const Header = () => {
             <div className="mail">baedangtop@naver.com</div>
           </div>
           <div className="button">
-            <button className="out">탈퇴</button>
-            <button className="modify">수정하기</button>
+            <Link to="/payment">
+              <button className="modify2">정기 결제하기</button>
+            </Link>
+            <div>
+              <button className="out">탈퇴</button>
+              <button className="modify">수정하기</button>
+            </div>
           </div>
         </div>
       </div>

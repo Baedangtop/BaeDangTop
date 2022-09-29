@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 
 export const customAxios = axios.create({
-  baseURL: `http://10.80.162.117:8080`,
+  baseURL: `http://10.80.162.167:8080`,
   headers: {
     Authorization: `Bearer ${localStorage.getItem("Authorization")}`,
   },

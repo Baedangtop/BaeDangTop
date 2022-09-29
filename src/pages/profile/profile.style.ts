@@ -55,11 +55,15 @@ const ProfileStyle = styled.div`
           }
           .button {
             color: white;
-            width: 224px;
+            max-width: 224px;
             height: 40px;
 
-            display: flex;
-            justify-content: space-between;
+            /* display: flex; */
+            /* justify-content: space-between; */
+            div {
+              display: flex;
+              justify-content: space-between;
+            }
           }
         }
         .out {
@@ -78,6 +82,18 @@ const ProfileStyle = styled.div`
           height: 40px;
           margin-left: 24px;
           border: none;
+        }
+        .modify2 {
+          background: #ffffff;
+          border-radius: 15px;
+          width: 185px;
+          height: 40px;
+          margin-left: 24px;
+          border: none;
+          position: relative;
+          right: -125px;
+
+          margin-bottom: 10px;
         }
       }
     }
