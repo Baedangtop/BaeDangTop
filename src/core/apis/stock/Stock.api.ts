@@ -2,12 +2,16 @@ import { customAxios } from "../../util/customAxios";
 
 class StockApi {
   public async getStock(pageNumber: Number) {
-    const res = await customAxios.get(`/stocks/?page=${pageNumber}`);
-    console.log(res);
+    try {
+      const res = await customAxios.get(`/stocks/?page=${pageNumber}&size=10`);
+      return res.data.list;
+    } catch (e) {
+      return e;
+    }
   }
   public async getStockByName(name) {
     const res = await customAxios.get(`/stocks/${name}`);
-    console.log(res);
+    return res.data;
   }
 }
 

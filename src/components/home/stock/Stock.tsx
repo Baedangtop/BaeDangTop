@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Info from "./info/Info";
 import Search from "./search/Search";
@@ -8,17 +8,27 @@ import { useSelector } from "react-redux";
 
 const Stock = () => {
   const { page } = useSelector((state: any) => state.stockReducer);
+  const [list, setList] = useState<any>([]);
   useEffect(() => {
-    const info = StockApi.getStock(page);
-    const code = StockApi.getStockByName("파인테크닉스");
-    console.log(info);
-    console.log(code);
-  }, []);
+    getList();
+  }, [page]);
+
+  const getList = async () => {
+    const info = await StockApi.getStock(page);
+    setList(info);
+  };
+
+  const searchList = async (e: any, name: string) => {
+    e.preventDefault();
+
+    const item = await StockApi.getStockByName(name);
+    setList([item]);
+  };
 
   return (
     <StockStyle>
-      <Search />
-      <Info />
+      <Search searchList={searchList} />
+      <Info list={list} />
       <StockButton />
     </StockStyle>
   );

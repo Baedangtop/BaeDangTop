@@ -3,8 +3,8 @@ import BoardApi from "../../../../core/apis/board/Board.api";
 import Item from "../stockItem/item";
 import InfoStyle from "./info.style";
 
-const Info = () => {
-  const [stock, setStock] = useState([]);
+const Info = ({ list }) => {
+  // const [stock, setStock] = useState([]);
   // useEffect(() => {
   //   getStock();
   // }, []);
@@ -23,7 +23,7 @@ const Info = () => {
         Top 10 주식
         <span className="title__gray">수익률 높은 순</span>
       </p>
-      {stock.map((v) => (
+      {list.map((v) => (
         <Item graph={v} />
       ))}
     </InfoStyle>

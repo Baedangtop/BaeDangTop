@@ -1,33 +1,7 @@
 import { CustomAction } from "../../util/interface/redux.interface";
 
 const NoticeState = {
-  item: [
-    {
-      id: 0,
-      date: "2022.07.27",
-      image: null,
-      title: "게시물 제목",
-      description: "게시물 내용",
-      comment: [
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-      ],
-    },
-    {
-      id: 1,
-      date: "2022.07.27",
-      image: null,
-      title: "게시물 제목",
-      description: "게시물 내용",
-      comment: [
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-        { image: null, writing: "내용내용내용내용내용내용내용" },
-      ],
-    },
-  ],
-  number: 0,
+  item: [],
 };
 
 export const CHANGE_NOTICE = "CHANGE_NOTICE";

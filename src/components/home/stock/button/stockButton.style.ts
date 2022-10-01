@@ -21,6 +21,11 @@ const StockButtonStyle = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  .idx0 {
+    background-color: black;
+    color: white;
+  }
 `;
 
 export default StockButtonStyle;

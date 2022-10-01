@@ -5,6 +5,7 @@ import {
   CHANGE_MAX_START_PAGE,
   CHANGE_START_PAGE,
   CHANGE_MAX_END_PAGE,
+  CHANGE_PAGE,
 } from "../../../../reducers/stock/stockReducers";
 import ButtonItem from "./ButtonItem";
 import StockButtonStyle from "./stockButton.style";
@@ -33,12 +34,24 @@ const StockButton = () => {
     });
   }, []);
 
+  const changePage = (page: any) => {
+    dispatch({
+      type: CHANGE_PAGE,
+      data: page,
+    });
+  };
+
   return (
     <StockButtonStyle>
       <ButtonItem des="<<" changePage={changeMaxStartPage} />
       <ButtonItem des="<" changePage={changeStartPage} />
       {[0, 1, 2, 3, 4].map((v, idx) => (
-        <ButtonItem key={idx} des={page + v} changePage={changeStartPage} />
+        <ButtonItem
+          key={idx}
+          des={page + v}
+          idx={idx}
+          changePage={() => changePage(page + v)}
+        />
       ))}
       <ButtonItem des=">" changePage={changeEndPage} />
       <ButtonItem des=">>" changePage={changeMaxEndPage} />

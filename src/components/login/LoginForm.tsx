@@ -18,7 +18,8 @@ const LoginForm = () => {
       email: idRef.current.value,
       password: pwRef.current.value,
     });
-    if (!bool) {
+    if (bool) {
+      alert(bool);
       return;
     }
 

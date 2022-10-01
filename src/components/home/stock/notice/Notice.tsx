@@ -1,20 +1,30 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BoardApi from "../../../../core/apis/board/Board.api";
+import { CHANGE_NOTICE } from "../../../../reducers/notice/NoticeReducer";
 import NoticeItem from "../noticeItem/NoticeItem";
 import NoticeStyle from "./notice.style";
 import NoticeModal from "./NoticeModal";
 
 const Notice = () => {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
   const changeShow = useCallback(() => {
     setShow((prev) => !prev);
   }, []);
   const { item } = useSelector((state: any) => state.NoticeReducer);
 
   useEffect(() => {
-    BoardApi.getBoards();
+    changeNotice();
   }, []);
+
+  const changeNotice = async () => {
+    const value = await BoardApi.getBoards();
+    dispatch({
+      type: CHANGE_NOTICE,
+      data: value,
+    });
+  };
 
   return (
     <NoticeStyle>

@@ -10,14 +10,21 @@ const RegisterForm = () => {
   const pwRef = useRef<HTMLFormElement>();
   const pwCheckRef = useRef<HTMLFormElement>();
 
-  const SendRegisterRequest = useCallback((e: any) => {
+  const SendRegisterRequest = useCallback(async (e: any) => {
     e.preventDefault();
-    const bool = Auth.register({
+    if (pwRef.current.value !== pwCheckRef.current.value) {
+      alert("비밀번호와 비밀번호 확인이 다릅니다");
+      return;
+    }
+    const bool = await Auth.register({
       name: nameRef.current.value,
       email: idRef.current.value,
       password: pwRef.current.value,
     });
     console.log(bool);
+    if (bool) {
+      alert(bool);
+    }
   }, []);
 
   return (

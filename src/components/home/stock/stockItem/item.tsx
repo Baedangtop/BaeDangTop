@@ -11,38 +11,48 @@ const Item = memo(({ graph }: any) => {
   const [max, setMax] = useState(0);
   const [min, setMin] = useState(0);
 
-  // useEffect(() => {
-  //   setMax(graph.reduce((max: number, v: any) => (max < v.y ? v.y : max), 0));
-  //   setMin(graph.reduce((min: number, v: any) => (min > v.y ? v.y : min), 100));
-  // }, [graph]);
+  useEffect(() => {
+    setMax(
+      graph.dividendHistories.reduce(
+        (max: number, v: any) => (max < v.price ? v.price : max),
+        0
+      )
+    );
+    setMin(
+      graph.dividendHistories.reduce(
+        (max: number, v: any) => (max > v.price ? v.price : max),
+        10000000000000
+      )
+    );
+  }, [graph]);
 
   return (
     <ItemStyle>
       <div className="basic">
         <div className="logo"></div>
-        <div className="name">Amazon</div>
+        <div className="name">{graph.stockName}</div>
         <div className="graph">
-          {/* <svg>
+          <svg>
             <polyline
-              points={graph
-                .map((v: { x: number; y: number }, index: number) => {
-                  return `${(index * 100) / graph.dividendHistories.length},${
-                    14 - (14 / (max / v.y) - 14 / min)
+              points={graph.dividendHistories
+                .map((v: any, index: number, arr: any) => {
+                  return `${((index * 100) / arr.length) * 2},${
+                    30 - (14 / (max / v.price) - 14 / min)
                   } `;
                 })
                 .join(" ")}
             ></polyline>
-          </svg> */}
+          </svg>
         </div>
         <div className="price">
-          <div className="price__current">149.24</div>
-          <div className="price__yield">+2.54%</div>
+          <div className="price__current">{graph.price}</div>
+          <div className="price__yield">+{graph.yield}%</div>
         </div>
         <button className="toggle" onClick={changeToggle}>
           +
         </button>
       </div>
-      {toggle && <Detail />}
+      {toggle && <Detail item={graph} />}
     </ItemStyle>
   );
 });

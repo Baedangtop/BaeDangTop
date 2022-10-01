@@ -107,7 +107,9 @@ const DetailStyle = styled.div`
     .current__info--graph {
       margin-top: 24px;
       height: 48px;
-      border: 1px solid black;
+
+      display: flex;
+      gap: 55px;
     }
   }
 `;

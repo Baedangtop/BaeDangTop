@@ -22,6 +22,8 @@ const ItemStyle = styled.div`
       font-size: 18px;
       line-height: 21px;
       color: #000000;
+
+      width: 200px;
     }
 
     .graph {

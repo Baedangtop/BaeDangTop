@@ -1,11 +1,14 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import SearchStyle from "./search.style";
 
-const Search = () => {
+const Search = ({ searchList }: any) => {
   const [show, setShow] = useState(false);
   const changeShow = useCallback(() => {
     setShow((prev) => !prev);
   }, []);
+
+  const ref = useRef<HTMLInputElement>();
+
   return (
     <SearchStyle>
       <p className="p__title--search-name">주식 데이터 확인</p>
@@ -21,11 +24,14 @@ const Search = () => {
             </ul>
           )}
         </div>
-        <div className="search__input">
+        <form
+          onSubmit={(e) => searchList(e, ref.current.value)}
+          className="search__input"
+        >
           <label htmlFor="a"></label>
-          <input type="text" id="a" className="search__input--text" />
-          <span>검색</span>
-        </div>
+          <input type="text" id="a" ref={ref} className="search__input--text" />
+          <button>검색</button>
+        </form>
       </div>
     </SearchStyle>
   );
