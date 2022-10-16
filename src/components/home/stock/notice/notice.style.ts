@@ -27,7 +27,7 @@ const NoticeStyle = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 296px;
+      width: 500px;
       height: 40px;
 
       .title__info--modify {
@@ -36,7 +36,7 @@ const NoticeStyle = styled.div`
         border: 1px solid black;
       }
       .title__info--notice {
-        width: 80px;
+        min-width: 140px;
         height: 40px;
         border: 1px solid #b4b4b4;
         border-radius: 15px;
@@ -51,7 +51,7 @@ const NoticeStyle = styled.div`
         color: #b4b4b4;
       }
       .title__info--free {
-        width: 140px;
+        min-width: 140px;
         height: 40px;
         background: #000000;
         border-radius: 15px;

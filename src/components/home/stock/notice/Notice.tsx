@@ -12,14 +12,21 @@ const Notice = () => {
   const changeShow = useCallback(() => {
     setShow((prev) => !prev);
   }, []);
+
+  const [kategory, setKategory] = useState("NOTICE");
+
+  const changeKategory = (str: string) => {
+    setKategory(str);
+  };
+
   const { item } = useSelector((state: any) => state.NoticeReducer);
 
   useEffect(() => {
     changeNotice();
-  }, []);
+  }, [kategory]);
 
   const changeNotice = async () => {
-    const value = await BoardApi.getBoards();
+    const value = await BoardApi.getBoards(kategory);
     dispatch({
       type: CHANGE_NOTICE,
       data: value,
@@ -32,8 +39,34 @@ const Notice = () => {
         <div className="title__name">게시판</div>
         <div className="title__info">
           <div className="title__info--modify" onClick={changeShow}></div>
-          <div className="title__info--notice">공지</div>
-          <div className="title__info--free">자유게시판</div>
+          <div
+            className={
+              kategory === "NOTICE"
+                ? "title__info--free"
+                : "title__info--notice"
+            }
+            onClick={() => changeKategory("NOTICE")}
+          >
+            공지
+          </div>
+          <div
+            className={
+              kategory === "FREE" ? "title__info--free" : "title__info--notice"
+            }
+            onClick={() => changeKategory("FREE")}
+          >
+            자유게시판
+          </div>
+          <div
+            className={
+              kategory === "EXPERT"
+                ? "title__info--free"
+                : "title__info--notice"
+            }
+            onClick={() => changeKategory("EXPERT")}
+          >
+            전문가 컬럼
+          </div>
         </div>
       </p>
       <div className="notice--container">
@@ -41,7 +74,13 @@ const Notice = () => {
           <NoticeItem v={v} />
         ))}
       </div>
-      {show && <NoticeModal changeShow={changeShow} />}
+      {show && (
+        <NoticeModal
+          changeShow={changeShow}
+          kategory={kategory}
+          changeNotice={changeNotice}
+        />
+      )}
     </NoticeStyle>
   );
 };

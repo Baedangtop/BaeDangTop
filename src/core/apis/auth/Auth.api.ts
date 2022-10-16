@@ -1,6 +1,7 @@
 import { LoginParam, RegisterParam } from "./auth.param";
 import axios from "axios";
 import config from "../../config/config";
+import { customAxios } from "../../util/customAxios";
 
 class Auth {
   public async login(param: LoginParam): Promise<any> {
@@ -11,7 +12,9 @@ class Auth {
         email,
         password,
       });
-      await localStorage.setItem("Authorization", data.data.token);
+      localStorage.setItem("Authorization", data.data.token);
+
+      window.location.reload();
 
       return false;
     } catch (e) {
@@ -46,6 +49,15 @@ class Auth {
         case 500:
           return "서버 오류입니다";
       }
+    }
+  }
+
+  public async loginCheck() {
+    try {
+      const response = await customAxios.get("/auth/check");
+      return { bool: true, user: response.data.user };
+    } catch (e) {
+      return { bool: false };
     }
   }
 }

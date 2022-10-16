@@ -1,7 +1,8 @@
 import axios, { AxiosError } from "axios";
+import config from "../config/config";
 
 export const customAxios = axios.create({
-  baseURL: `http://192.168.1.176:8080`,
+  baseURL: config.config,
   headers: {
     Authorization: `Bearer ${localStorage.getItem("Authorization")}`,
   },

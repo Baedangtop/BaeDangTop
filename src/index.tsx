@@ -6,12 +6,15 @@ import "./style.css";
 import App from "./App";
 import ConfigureStore from "./store/configureStore";
 import theme from "./theme";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ConfigureStore>
     <ThemeProvider theme={theme.light}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </ConfigureStore>
 );

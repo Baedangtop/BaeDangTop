@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import BoardApi from "../../../../core/apis/board/Board.api";
 import { ADD_NOTICE } from "../../../../reducers/notice/NoticeReducer";
 
-const NoticeModal = memo(({ changeShow }: any) => {
+const NoticeModal = memo(({ changeShow, kategory, changeNotice }: any) => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState<string>();
   const titleRef = useRef<HTMLInputElement>();
@@ -11,6 +11,7 @@ const NoticeModal = memo(({ changeShow }: any) => {
   const dispatch = useDispatch();
 
   const changeImage = useCallback((e: any) => {
+    console.log("123");
     let file = e.target.files[0];
     setImage(file);
     const currentImageUrl = URL.createObjectURL(file);
@@ -20,10 +21,18 @@ const NoticeModal = memo(({ changeShow }: any) => {
   const addPostNotice = useCallback(() => {
     if (/[^\s]/.test(titleRef.current.value)) {
       const date = new Date();
-      const frm = new FormData();
-      frm.append("preview", image);
+      let frm = null;
+      if (image) {
+        frm = new FormData();
+        frm.append("preview", image);
+      }
 
-      BoardApi.postBoards(frm, titleRef.current.value, desRef.current.value);
+      BoardApi.postBoards(
+        frm,
+        titleRef.current.value,
+        desRef.current.value,
+        kategory
+      );
 
       dispatch({
         type: ADD_NOTICE,
@@ -40,6 +49,7 @@ const NoticeModal = memo(({ changeShow }: any) => {
           comment: [],
         },
       });
+      changeNotice();
       changeShow();
     }
   }, [dispatch, preview]);

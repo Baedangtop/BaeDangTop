@@ -11,6 +11,11 @@ const DetailStyle = styled.div`
 
   display: flex;
 
+  .addStock {
+    width: 80px;
+    height: 20px;
+  }
+
   .allocation {
     width: 215px;
     height: 100%;

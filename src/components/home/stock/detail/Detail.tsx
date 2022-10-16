@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import BoardApi from "../../../../core/apis/board/Board.api";
 import DetailStyle from "./detail.style";
 
 const Detail = ({ item }: any) => {
+  useEffect(() => {
+    console.log(item);
+  }, []);
+
+  const addStock = async () => {
+    await BoardApi.addStock(item.code);
+  };
+
   return (
     <DetailStyle>
       <div className="allocation">
@@ -22,7 +31,7 @@ const Detail = ({ item }: any) => {
         </div>
       </div>
       <div className="current">
-        <div className="current__title">현재 보유 내역</div>
+        <div className="current__title">현재 주식 값</div>
         <div className="current__info">
           <div className="currnet__info--detail">
             <div className="currnet__info--detail-logo"></div>
@@ -41,6 +50,12 @@ const Detail = ({ item }: any) => {
             <div>
               <p>배당금</p>
               <p>{item.dividend}</p>
+            </div>
+            <div>
+              <p>내 자산 추가</p>
+              <button className="addStock" onClick={addStock}>
+                +
+              </button>
             </div>
           </div>
         </div>

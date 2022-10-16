@@ -2,6 +2,7 @@ import React, { memo, useCallback, useEffect, useState } from "react";
 import BoardApi from "../../../../core/apis/board/Board.api";
 import NoticeDetail from "../noticeDetail/NoticeDetail";
 import NoticeItemStyle from "./noticeItem.style";
+import config from "../../../../core/config/config";
 
 const NoticeItem = memo(({ v }: any) => {
   const [toggle, setToggle] = useState(false);
@@ -13,7 +14,8 @@ const NoticeItem = memo(({ v }: any) => {
   const [image, setImage] = useState(null);
 
   const changeImage = async () => {
-    const value = await BoardApi.getImage(v.attachment_urls[0]);
+    const value = config.config + v.attachment_urls[0];
+    console.log("image : " + value);
     setImage(value);
   };
 
@@ -34,7 +36,7 @@ const NoticeItem = memo(({ v }: any) => {
       </div>
       <div className="item__title">{v.title}</div>
       <div className="description">{v.content}</div>
-      {toggle && <NoticeDetail changeToggle={changeToggle} v={v} />}
+      {toggle && <NoticeDetail changeToggle={changeToggle} v={v.post_id} />}
     </NoticeItemStyle>
   );
 });

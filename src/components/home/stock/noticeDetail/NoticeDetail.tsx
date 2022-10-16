@@ -1,5 +1,6 @@
-import React, { memo, useCallback, useEffect, useRef } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import BoardApi from "../../../../core/apis/board/Board.api";
 import { ADD_COMMENT } from "../../../../reducers/notice/NoticeReducer";
 import NoticeComment from "./NoticeComment";
 import NoticeDetailStyle from "./noticeDetail.style";
@@ -9,25 +10,30 @@ const NoticeDetail = memo(({ changeToggle, v }: any) => {
   const textRef = useRef<HTMLTextAreaElement>();
   const cRef = useRef<HTMLDivElement>();
 
+  const [comment, setComment] = useState([]);
+
   useEffect(() => {
+    getComment();
+
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, []);
 
+  const getComment = async () => {
+    const comments = await BoardApi.getComment(v);
+    setComment(comments);
+  };
+
   const successWriting = useCallback(async () => {
     if (/[^\s]/.test(textRef.current.value)) {
-      await dispatch({
-        type: ADD_COMMENT,
-        data: {
-          id: v.id,
-          image: null,
-          writing: textRef.current.value.replace(/^\s/, ""),
-        },
-      });
+      await BoardApi.postComment(v, textRef.current.value.replace(/^\s/, ""));
+
       textRef.current.value = "";
       textRef.current.focus();
+
+      window.location.reload();
 
       cRef.current.scrollTo(0, cRef.current.clientHeight + 72);
     }
@@ -41,7 +47,7 @@ const NoticeDetail = memo(({ changeToggle, v }: any) => {
   return (
     <NoticeDetailStyle id="m">
       <div className="c" ref={cRef}>
-        {v.comment.map((value: any) => (
+        {comment.map((value: any) => (
           <NoticeComment v={value} />
         ))}
       </div>
