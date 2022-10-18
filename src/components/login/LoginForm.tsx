@@ -4,6 +4,7 @@ import LoginInput from "./LoginInput";
 import Auth from "../../core/apis/auth/Auth.api";
 import { LOGIN } from "../../reducers/login/loginAction";
 import { Link } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 
 // 비제어 컴포넌트 방식
 const LoginForm = () => {
@@ -36,6 +37,10 @@ const LoginForm = () => {
         <LoginInput type="password" title="비밀번호" refs={pwRef} />
         <button onClick={SendLoginRequest}>로그인</button>
       </form>
+      <GoogleLogin
+        onSuccess={(res) => console.log(res, "성공")}
+        onError={() => console.log("실패")}
+      ></GoogleLogin>
       <p className="p__navigation--register">
         아직 회원이 아니신가요?{" "}
         <Link to="/register" style={{ textDecoration: "none", color: "black" }}>

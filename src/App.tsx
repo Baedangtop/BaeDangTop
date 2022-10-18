@@ -10,6 +10,8 @@ import Payment from "./pages/payment/Payment";
 import AuthApi from "./core/apis/auth/Auth.api";
 import { LOGIN } from "./reducers/login/loginAction";
 
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 const App = () => {
   const { login } = useSelector((state: any) => state.loginReducer);
   const dispatch = useDispatch();
@@ -31,7 +33,9 @@ const App = () => {
   }, [location.pathname]);
 
   return (
-    <>
+    <GoogleOAuthProvider
+      clientId={`164986754301-vjqje7imfdpracjqpq8kd21vhnq9sr0c.apps.googleusercontent.com`}
+    >
       {!login ? (
         <Routes>
           <Route path="/login" element={<Login />}></Route>
@@ -46,7 +50,7 @@ const App = () => {
           <Route path="*" element={<div>404</div>}></Route>
         </Routes>
       )}
-    </>
+    </GoogleOAuthProvider>
   );
 };
 
