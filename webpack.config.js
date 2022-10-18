@@ -2,6 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const webpack = require("webpack");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+// const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -52,8 +57,11 @@ module.exports = {
     }),
     new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin({
-      process: { env: {} },
+      "process.env": JSON.stringify(process.env),
     }),
+    // new Dotenv({
+    //   path: ".env",
+    // }),
   ],
   devServer: {
     historyApiFallback: true,

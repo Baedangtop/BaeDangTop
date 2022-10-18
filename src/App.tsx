@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <GoogleOAuthProvider
-      clientId={`164986754301-vjqje7imfdpracjqpq8kd21vhnq9sr0c.apps.googleusercontent.com`}
+      clientId={`${process.env.REACT_APP_GOOGLE_REST_API_KEY}`}
     >
       {!login ? (
         <Routes>
