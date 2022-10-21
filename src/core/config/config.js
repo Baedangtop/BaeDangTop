@@ -1,3 +1,3 @@
 export default {
-  config: "http://172.20.10.3:8080",
+  config: "http://10.80.161.114:8080",
 };

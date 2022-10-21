@@ -30,6 +30,10 @@ const LoginForm = () => {
     });
   }, []);
 
+  const googleLogin = async (credential) => {
+    await Auth.googleLogin(credential);
+  };
+
   return (
     <>
       <form>
@@ -38,7 +42,7 @@ const LoginForm = () => {
         <button onClick={SendLoginRequest}>로그인</button>
       </form>
       <GoogleLogin
-        onSuccess={(res) => console.log(res, "성공")}
+        onSuccess={(res) => googleLogin(res.credential)}
         onError={() => console.log("실패")}
       ></GoogleLogin>
       <p className="p__navigation--register">

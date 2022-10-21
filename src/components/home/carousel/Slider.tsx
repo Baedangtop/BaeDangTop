@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import img1 from "../../../assets/images/logo.png";
-import img2 from "../../../assets/images/logo.png";
+import img1 from "../../../assets/images/Component1.png";
+import img2 from "../../../assets/images/Component2.png";
 import img3 from "../../../assets/images/logo.png";
 
 import Slide from "./Slide";

@@ -26,6 +26,20 @@ const ProfileStyle = styled.div`
         font-size: 24px;
         line-height: 28px;
       }
+      .relative {
+        width: 80px;
+        height: 80px;
+        margin-right: 80px;
+        position: relative;
+
+        .purchase {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+
+          width: 27px;
+        }
+      }
       .profile {
         margin-top: 28px;
         height: 80px;
@@ -35,8 +49,7 @@ const ProfileStyle = styled.div`
         .picture {
           width: 80px;
           height: 80px;
-          margin-right: 80px;
-          border: 1px solid white;
+          border-radius: 50%;
         }
         .name {
           color: white;

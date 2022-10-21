@@ -60,6 +60,22 @@ class Auth {
       return { bool: false };
     }
   }
+
+  public async googleLogin(id) {
+    try {
+      const data = await axios.get(
+        `${config.config}/auth/oauth-google?code=${id}`
+      );
+      localStorage.setItem("Authorization", data.data.token);
+      console.log(data);
+
+      // window.location.reload();
+
+      return false;
+    } catch (e) {
+      console.log(e);
+    }
+  }
 }
 
 export default new Auth();

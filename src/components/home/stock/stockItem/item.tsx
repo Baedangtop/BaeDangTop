@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from "react";
 import Detail from "../detail/Detail";
 import ItemStyle from "./item.style";
+import Down from "../../../../assets/images/Down.png";
 
 const Item = memo(({ graph }: any) => {
   const [toggle, setToggle] = useState(false);
@@ -48,9 +49,7 @@ const Item = memo(({ graph }: any) => {
           <div className="price__current">{graph.price}</div>
           <div className="price__yield">+{graph.yield}%</div>
         </div>
-        <button className="toggle" onClick={changeToggle}>
-          +
-        </button>
+        <img className="toggle" onClick={changeToggle} src={Down} />
       </div>
       {toggle && <Detail item={graph} />}
     </ItemStyle>

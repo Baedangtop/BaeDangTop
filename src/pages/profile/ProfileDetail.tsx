@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Item from "../../components/home/stock/stockItem/item";
+import ProfileApi from "../../core/apis/profile/Profile.api";
 
 const ProfileDetail = () => {
+  const [favorite, setFavorite] = useState(null);
+  const getFavorite = async () => {
+    const data = await ProfileApi.getFavorite();
+    setFavorite(data);
+  };
+  useEffect(() => {
+    getFavorite();
+  }, []);
   return (
     <div className="pf">
       <div className="title">
@@ -18,9 +27,9 @@ const ProfileDetail = () => {
           </div>
         </div>
       </div>
-      <Item />
-      <Item />
-      <Item />
+      {favorite?.list.map((v) => (
+        <Item graph={v} />
+      ))}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import HomeHeaderStyle from "./homeHeader.style";
 import logo from "../../../assets/images/logo.png";
 import Carousel from "../carousel/Carousel";
 import { Link } from "react-router-dom";
+import p from "../../../assets/images/p.png";
 
 const HomeHeader = () => {
   return (
@@ -12,7 +13,7 @@ const HomeHeader = () => {
         <div>
           <p>로그아웃</p>
           <Link to="/profile">
-            <img src="" alt="" />
+            <img src={p} alt="" />
           </Link>
         </div>
       </div>

@@ -5,7 +5,6 @@ export const Container = styled.div`
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
-  background: #f7eaf2;
   border-radius: 15px;
 `;
 export const SliderContainer = styled.div`

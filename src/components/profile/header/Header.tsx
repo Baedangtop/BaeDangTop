@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileApi from "../../../core/apis/profile/Profile.api";
+import p from "../../../assets/images/p.png";
+import pay from "../../../assets/images/pay.png";
 
 const Header = () => {
+  const [user, setUser] = useState(null);
+  const getUser = async () => {
+    const data = await ProfileApi.getProfile();
+    setUser(data);
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <div className="header">
       <div className="des">
         <div className="title">My Page</div>
         <div className="profile">
-          <div className="picture"></div>
+          <div className="relative">
+            <img className="picture" src={p} />
+            {user?.roles[1] === "PURCHASED" && (
+              <img className="purchase" src={pay} />
+            )}
+          </div>
           <div className="name">
-            <div className="name__write">배당탑</div>
-            <div className="mail">baedangtop@naver.com</div>
+            <div className="name__write">{user?.name}</div>
+            <div className="mail">{user?.email}</div>
           </div>
           <div className="button">
             <Link to="/payment">
