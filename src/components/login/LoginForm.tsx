@@ -31,7 +31,18 @@ const LoginForm = () => {
   }, []);
 
   const googleLogin = async (credential) => {
-    await Auth.googleLogin(credential);
+    console.log(credential);
+    const response = await Auth.googleLogin(credential.credential);
+
+    if (response) {
+      alert("로그인에 실패하였습니다.");
+      return;
+    }
+
+    dispatch({
+      type: LOGIN,
+      data: response,
+    });
   };
 
   return (
@@ -42,7 +53,7 @@ const LoginForm = () => {
         <button onClick={SendLoginRequest}>로그인</button>
       </form>
       <GoogleLogin
-        onSuccess={(res) => googleLogin(res.credential)}
+        onSuccess={(res) => googleLogin(res)}
         onError={() => console.log("실패")}
       ></GoogleLogin>
       <p className="p__navigation--register">

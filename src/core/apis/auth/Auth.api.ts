@@ -74,6 +74,7 @@ class Auth {
       return false;
     } catch (e) {
       console.log(e);
+      return true;
     }
   }
 }

@@ -1,3 +1,3 @@
 export default {
-  config: "http://10.80.161.114:8080",
+  config: "http://baedangtop.com",
 };

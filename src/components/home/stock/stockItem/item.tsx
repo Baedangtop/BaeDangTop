@@ -30,7 +30,7 @@ const Item = memo(({ graph }: any) => {
   return (
     <ItemStyle>
       <div className="basic">
-        <div className="logo"></div>
+        <img className="logo" src={graph.logoUrl} />
         <div className="name">{graph.stockName}</div>
         <div className="graph">
           <svg>
@@ -46,7 +46,7 @@ const Item = memo(({ graph }: any) => {
           </svg>
         </div>
         <div className="price">
-          <div className="price__current">{graph.price}</div>
+          <div className="price__current">{graph.price.toLocaleString()}</div>
           <div className="price__yield">+{graph.yield}%</div>
         </div>
         <img className="toggle" onClick={changeToggle} src={Down} />

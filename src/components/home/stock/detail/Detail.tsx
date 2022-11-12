@@ -34,7 +34,7 @@ const Detail = ({ item }: any) => {
         <div className="current__title">현재 주식 값</div>
         <div className="current__info">
           <div className="currnet__info--detail">
-            <div className="currnet__info--detail-logo"></div>
+            <img className="currnet__info--detail-logo" src={item.logoUrl} />
             <div className="currnet__info--detail-title">{item.stockName}</div>
             <div className="currnet__info--detail-number">{item.dividend}</div>
           </div>

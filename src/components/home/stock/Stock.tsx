@@ -21,7 +21,15 @@ const Stock = () => {
   const searchList = async (e: any, name: string) => {
     e.preventDefault();
 
+    if (name == "") {
+      alert("입력해주세요");
+      return;
+    }
+
     const item = await StockApi.getStockByName(name);
+    if (!item) {
+      return;
+    }
     setList([item]);
   };
 
