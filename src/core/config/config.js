@@ -1,3 +1,3 @@
 export default {
-  config: "http://baedangtop.com/baedangtop",
+  config: "https://baedangtop.com/baedangtop",
 };
